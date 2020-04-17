@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="en">
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>MTA:SA SKINS By MrPop</title>
+		<meta name="keywords" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
+		<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
+ 	 	<link rel="stylesheet" href="./style.css">
+
+		<script src="js/jQuery.js" type="text/javascript" ></script>
+		<script src="js/info.js" type="text/javascript" ></script>
+		<script src="js/vue.js" type="text/javascript" ></script>
+	</head>
+<style>
+
+</style>
+<body class="app">
+	<div class="nav">
+		<h1> MTA SKIN TEXTURE</h1>
+		<h3>by MrPop</h3>
+		<input type="text" v-model="goto" placeholder="Search">
+	</div>
+	<div class ="container">
+		<div class="card" v-for="text in texts | filterBy goto">
+			<div class="card-head"> SKIN ID : {{text.name}} </div>
+			<div class="card-body">
+				<img src="./skins/{{text.name}}.png">
+			</div>
+			<div class="card-body-2" >
+				<div class="card-head"> Texture name : {{ 	text.texture }} </div>
+				<div class="card-body-inner" id="{{text.texture}}">
+					<img src="./textures/{{text.texture}}.png" alt="{{text.texture}}" >
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+
+	
+new Vue ({
+	el:".app",
+	data:ex,
+	methods:{
+		search :function() {
+			// alert(this.goto.toString())
+			window.location.href = this.goto;
+		},
+		remove :function(i){
+			this.texts.splice(i,1)
+		},
+		copy : function(text) {
+			this.text = text
+		},
+		loadImage : function(link)
+		{
+			return require('./assets/textures/' + link + '.png')
+		},
+	} 
+})
+function zero(i){
+	var str = i.toString()
+	if ( str.lenght == 2) {
+		return "0" + str
+	}else {
+		return str
+	}
+}
+
+
+</script>
+	
