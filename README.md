@@ -1,5 +1,5 @@
 # PMTV
-POP MTA TEXTURE VIEW is a project super helper any designer of skins to get or download any skin  
+POP MTA TEXTURE VIEW is a project super helper any designer of skins to get or download any skin or skin texture
 - Mr.Pop
 
 
